@@ -4,9 +4,10 @@ export function App() {
 
   return (
     <>
-      <Button />
-      <Button />
-      <Button />
+      <Button color="primary"/>
+      <Button color="secundary"/>
+      <Button color="danger"/>
+      <Button color="success"/>
       <Button />
     </>
   )
