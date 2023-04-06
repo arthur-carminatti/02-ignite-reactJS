@@ -16,6 +16,4 @@ export function App() {
       <GlobalStyle />
     </ThemeProvider>
   )
-
-  //testing
 }
