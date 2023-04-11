@@ -3,6 +3,7 @@ import { CountdownContainer, FormContainer, HomeContainer, MinutesAmountInout, S
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
+import { toast } from "react-toastify";
 
 const newCycleFormValidationSchema = zod.object({
     task: zod.string().min(1, 'informe a tarefa'),
@@ -26,6 +27,19 @@ export function Home() {
     function handleCreateNewCycle(data: NewCycleFormData) {
         console.log(data)
         reset()
+    }
+
+    function toastfy() {
+        toast.success('Parabéns', {
+            position: "bottom-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     const task = watch('task')
@@ -71,7 +85,7 @@ export function Home() {
                     <span>0</span>
                 </CountdownContainer>
 
-                <StartCountdownButton disabled={isSubmitDisabled} type="submit">
+                <StartCountdownButton disabled={isSubmitDisabled} onClick={toastfy} type="submit">
                     <Play size={24} />
                     Começar
                 </StartCountdownButton>
