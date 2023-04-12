@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
 import { Router } from './Router'
-import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -17,7 +16,6 @@ export function App() {
         <Router />
       </BrowserRouter>
       <GlobalStyle />
-      <ToastContainer />
     </ThemeProvider>
   )
 }
