@@ -54,6 +54,19 @@ export function cyclesReducer(state: CyclesState, action: any) {
                 draft.cycles[currentCycleIndex].finishedDate = new Date()
             })
         }
+        case ActionTypes.DELETE_HISTORY_LIST: {
+
+            const cycleWithoutDletedOne = state.cycles.filter(cycle => {
+                return cycle.id !== state.activeCycleId
+            })
+
+            // return cycleWithoutDletedOne
+            return produce(state, draft => {
+                cycleWithoutDletedOne
+            })
+
+            
+        }
         default:
             return state
     }

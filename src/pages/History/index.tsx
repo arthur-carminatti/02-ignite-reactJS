@@ -6,7 +6,7 @@ import ptBR from "date-fns/locale/pt-BR";
 import { Trash } from "phosphor-react";
 
 export function History() {
-    const { cycles } = useContext(CyclesContext)
+    const { cycles, deleteHistoryList } = useContext(CyclesContext)
 
     return (
         <HistoryContainer>
@@ -36,19 +36,19 @@ export function History() {
                                         <td>
                                             {cycle.finishedDate && (
                                                 <Status statusColor="green">Concluído
-                                                    <button><Trash /></button>
+                                                    <button onClick={deleteHistoryList}><Trash /></button>
                                                 </Status>
                                             )}
 
                                             {cycle.interruptedDate && (
                                                 <Status statusColor="red">Interrompido
-                                                    <button><Trash /></button>
+                                                    <button onClick={deleteHistoryList}><Trash /></button>
                                                 </Status>
                                             )}
 
                                             {(!cycle.finishedDate && !cycle.interruptedDate) && (
                                                 <Status statusColor="yellow">Em andamento
-                                                    <button><Trash /></button>
+                                                    <button onClick={deleteHistoryList}><Trash /></button>
                                                 </Status>
                                             )}
                                         </td>
