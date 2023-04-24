@@ -3,6 +3,7 @@ import { HistoryContainer, HistoryList, Status } from "./styles";
 import { CyclesContext } from "../../contexts/CyclesContext";
 import { formatDistanceToNow } from 'date-fns'
 import ptBR from "date-fns/locale/pt-BR";
+import { Trash } from "phosphor-react";
 
 export function History() {
     const { cycles } = useContext(CyclesContext)
@@ -31,19 +32,27 @@ export function History() {
                                         addSuffix: true,
                                         locale: ptBR
                                     })}</td>
-                                    <td>
-                                        {cycle.finishedDate && (
-                                            <Status statusColor="green">Concluído</Status>
-                                        )}
+                                    <>
+                                        <td>
+                                            {cycle.finishedDate && (
+                                                <Status statusColor="green">Concluído
+                                                    <button><Trash /></button>
+                                                </Status>
+                                            )}
 
-                                        {cycle.interruptedDate && (
-                                            <Status statusColor="red">Interrompido</Status>
-                                        )}
+                                            {cycle.interruptedDate && (
+                                                <Status statusColor="red">Interrompido
+                                                    <button><Trash /></button>
+                                                </Status>
+                                            )}
 
-                                        {(!cycle.finishedDate && !cycle.interruptedDate) && (
-                                            <Status statusColor="yellow">Em andamento</Status>
-                                        )}
-                                    </td>
+                                            {(!cycle.finishedDate && !cycle.interruptedDate) && (
+                                                <Status statusColor="yellow">Em andamento
+                                                    <button><Trash /></button>
+                                                </Status>
+                                            )}
+                                        </td>
+                                    </>
                                 </tr>
                             )
                         })}

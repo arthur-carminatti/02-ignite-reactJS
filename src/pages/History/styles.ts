@@ -57,6 +57,14 @@ export const HistoryList = styled.div`
             &:last-child {
                 padding-right: 1.5rem;
             }
+
+            button {
+                border: 0;
+                background: transparent;
+                color: ${props => props.theme["gray-100"]};
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 `
@@ -75,6 +83,7 @@ export const Status = styled.span<StatusProps>`
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    justify-content: space-between;
 
     &::before {
         content: '';
