@@ -10,3 +10,13 @@ With the Timer app, users can select the desired time duration and provide a des
   <img src="https://github.com/arthur-carminatti/02-ignite-reactJs/assets/126788701/715041e2-e5c6-41b4-9330-f117d2c057f2" />
   <img src="https://github.com/arthur-carminatti/02-ignite-reactJs/assets/126788701/a3971681-3645-4dcb-b853-5663adc683de" />
 </div>
+
+<h2>How to Run the Project</h2>
+
+To run Timer on your local machine, follow the instructions below:
+
+- Make sure you have Node.js installed in its latest version.
+- Clone this repository to your machine
+- Navigate to the project folder
+- Install the necessary dependencies: `npm install`
+- Start the application: `npm run dev`
